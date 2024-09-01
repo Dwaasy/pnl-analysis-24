@@ -60,7 +60,7 @@ class GateIoClientWrapper(ExchangeClientWrapper):
         except ApiException as e:
             print("Exception when calling SpotApi->list_currency_pairs: %s\n" % e)
 
-    def get_trades(self, symbol, start_date, end_date=round(time.time() * 1000)):
+    def get_trades(self, symbol, start_date, end_date):
         df_trades = pd.DataFrame()
         start_date = round(start_date / 1000)
         end_date = round(end_date / 1000)
